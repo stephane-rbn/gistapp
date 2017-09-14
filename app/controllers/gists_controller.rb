@@ -1,7 +1,9 @@
 class GistsController < ApplicationController
   before_action :find_gist, only: %i[show edit update destroy]
 
-  def index; end
+  def index
+    @gists = Gist.all.order('created_at DESC')
+  end
 
   def show; end
 

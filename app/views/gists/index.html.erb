@@ -1,1 +1,4 @@
-
+<% @gists.each do |gist| %>
+  <h2><%= gist.filename %></h2>
+  <p><%= gist.description %></p>
+<% end %>
