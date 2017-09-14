@@ -1,0 +1,2 @@
+class GistsController < ApplicationController
+end
