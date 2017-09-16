@@ -1,4 +1,8 @@
 <% @gists.each do |gist| %>
-  <h2><%= gist.filename %></h2>
+  <h2><%= link_to gist.filename, gist %></h2>
   <p><%= gist.description %></p>
+  <div style="border: 1px solid #001a33; height: 100px; padding: 10px">
+    <p><%= gist.code %></p>
+  </div>
+
 <% end %>
