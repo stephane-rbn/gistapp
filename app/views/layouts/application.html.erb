@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Gistapp</title>
+    <title>Fake Gist app</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,7 @@
   </head>
 
   <body>
+    <%# Bootstrap navbar %>
     <form class="navbar-form navbar-left navbar-fixed-top navbar-inverse" role="search" style="margin-top:0; height: 50px">
       <div class="container">
         <%= link_to 'GitHubGist', root_path, class: 'navbar-brand' %>
@@ -20,9 +21,16 @@
         </ul>
       </div>
     </form>
-    <div class="container">
     <div style="height: 100px"></div>
-      <%= yield %>
+    <div class="container">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "All Gists", root_path %>
+        <% Category.all.each do |category| %>
+          <li><%= link_to category.name, gists_path(category: category.name) %></li>
+        <% end %>
+      </ul>
+      <div style="height: 50px"></div>
+        <%= yield %>
     </div>
     <div style="height: 100px"></div>
   </body>
