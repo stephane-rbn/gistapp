@@ -43,7 +43,7 @@ class GistsController < ApplicationController
 
   def gists_params
     # Parameters we need to create and update a gist
-    params.require(:gist).permit(:filename, :description, :code)
+    params.require(:gist).permit(:filename, :description, :code, :category_id)
   end
 
   def find_gist
