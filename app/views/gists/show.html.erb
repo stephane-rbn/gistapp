@@ -1,5 +1,7 @@
 <h1><%= @gist.filename %></h1>
-<p><%= @gist.description %></p>
-<p><%= @gist.code %></p>
+<p>Description: <%= @gist.description %></p>
+<p style="border: 1px solid #001a33; height: 100px; padding: 10px"><%= @gist.code %></p>
 
-<%= link_to 'List', root_path %>
+<%= link_to 'All gists', root_path, class: 'btn btn-primary' %>
+<%= link_to 'Edit the gist', edit_gist_path(@gist), class: 'btn btn-info' %>
+<%= link_to 'Delete the gist', gist_path(@gist), method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure?" } %>
