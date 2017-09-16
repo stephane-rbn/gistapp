@@ -1,5 +1,7 @@
 <%= simple_form_for @gist do |f| %>
   <%= f.input :description %>
+  <%# Add the collection of every category that the user can choose %>
+  <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: 'Select a language'} %>
   <%= f.input :filename %>
   <%= f.input :code %>
   </br>
