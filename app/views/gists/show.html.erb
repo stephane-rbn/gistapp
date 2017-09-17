@@ -1,6 +1,7 @@
 <h1><%= @gist.filename %></h1>
 <p>Description: <%= @gist.description %></p>
 <p style="border: 1px solid #001a33; height: 100px; padding: 10px"><%= @gist.code %></p>
+<p>Created at <%= @gist.created_at.strftime("%d %b. %Y") %>, <%= @gist.created_at.strftime("%H:%M") %></p>
 
 <%= link_to 'All gists', root_path, class: 'btn btn-primary' %>
 <%= link_to 'Edit the gist', edit_gist_path(@gist), class: 'btn btn-info' %>

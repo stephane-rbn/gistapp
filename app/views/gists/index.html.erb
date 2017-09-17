@@ -4,5 +4,6 @@
   <div style="border: 1px solid #001a33; height: 100px; padding: 10px">
     <p><%= gist.code %></p>
   </div>
+  <p>Created at <%= gist.created_at.strftime("%d %b. %Y") %>, <%= gist.created_at.strftime("%H:%M") %></p>
 
 <% end %>
