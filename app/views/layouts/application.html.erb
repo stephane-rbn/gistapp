@@ -14,13 +14,19 @@
       <div class="container">
         <%= link_to 'GitHubGist', root_path, class: 'navbar-brand' %>
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search..." style="margin-top: 8.25px">
+          <div style="margin-top: 8.25px">
+            <%= form_tag(gists_path, method: 'get') do %>
+              <%= text_field_tag :search, params[:search], placeholder: 'Search...', class: "form-control" %>
+              <%= submit_tag 'Search' %>
+            <% end %>
+          </div>
         </div>
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to 'New gist', new_gist_path %></li>
         </ul>
       </div>
     </form>
+
     <div style="height: 100px"></div>
     <div class="container">
       <ul class="nav navbar-nav">
