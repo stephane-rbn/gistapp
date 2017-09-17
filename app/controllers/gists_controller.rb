@@ -4,15 +4,25 @@ class GistsController < ApplicationController
   before_action :find_gist, only: %i[show edit update destroy]
 
   def index
-    if params[:category].blank?
+    if params[:search]
+      @gists = Gist.search(params[:search]).order('created_at DESC')
+    elsif params[:category].blank?
       # if none category is selected,displays all gists in descending order
       @gists = Gist.all.order('created_at DESC')
     else
-      # otherwise find the category id and loop through the gists with this category id
+      # else find the category id & loop through the gists with the category id
       @category_id = Category.find_by(name: params[:category]).id
-      @gists = Gist.where(category_id: @category_id).order("created_at DESC")
+      @gists = Gist.where(category_id: @category_id).order('created_at DESC')
     end
   end
+
+  # def index
+  #   if params[:search]
+  #     @gists = Gist.search(params[:search]).order('created_at DESC')
+  #   else
+  #     @gists = Gist.all.order('created_at DESC')
+  #   end
+  # end
 
   def show; end
 
