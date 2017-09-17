@@ -1,24 +1,25 @@
-# README
+## Build a GitHubGist clone app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+My goal was to build a very simple clone of the Gist app by GitHub.
 
-Things you may want to cover:
+Users need to able to post, categorize and search a gist. For now, users are able to filter gists by their categories, and find gists by the name, code and description.
 
-* Ruby version
+Ruby 2.4.0 is used on Rails 5.
 
-* System dependencies
+## Instructions
 
-* Configuration
+* Use Ruby On Rails
+* PostgreSQL as database
 
-* Database creation
+## Setup
 
-* Database initialization
+* Clone (or download) this repository on your computer.
+* Run ```bundle install``` to get all the gems I've been using in this app (make sure PostgreSQL is already installed in your machine).
+* Run ```rails db:migrate``` to migrate your database tables.
+* Finally, you can run ```rails s``` to launch the app (by default, you can reach it on http://0.0.0.0:3000)
 
-* How to run the test suite
+I deployed this app on Heroku ([https://gistapp.herokuapp.com/](https://gistapp.herokuapp.com/)) so that you can see what to expect.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Disclaimer
 
-* Deployment instructions
-
-* ...
+This app is not complete and very unstable, I'm totally aware of that. That's why I'm totally open to advices and feedbacks!
